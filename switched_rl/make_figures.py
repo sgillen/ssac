@@ -14,7 +14,7 @@ from torch.multiprocessing import Pool
 from itertools import product
 import os
 
-jup_dir = "/home/sgillen/work/"
+jup_dir = os.getcwd()
 
 def load_trials(trial_dir):
     directory = jup_dir + trial_dir

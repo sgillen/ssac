@@ -1,0 +1,494 @@
+@article{spong_energy_1996,
+	title = {Energy {Based} {Control} of a {Class} of {Underactuated} {Mechanical} {Systems}},
+	volume = {29},
+	issn = {14746670},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S1474667017581057},
+	doi = {10.1016/S1474-6670(17)58105-7},
+	abstract = {In this paper we discuss some design m{\textasciitilde}thod8 for the co ntrol of a class of underactuated mechanical systems, This class of systems includes gymnastic robots , such as the Acrobat , as well th e classical cart- pole system. T he systems considered here arc nonminirnum phase whi ch gre1'Ltly complic.ates the control design issues. Our design techniques combine nonlinea.:r partial feed back linearization with Lyapunov methods based on saturation functions, switchin g a.nd energy sha.ping.},
+	language = {en},
+	number = {1},
+	urldate = {2020-03-15},
+	journal = {IFAC Proceedings Volumes},
+	author = {Spong, Mark W.},
+	month = jun,
+	year = {1996},
+	pages = {2828--2832},
+	file = {1-s2.0-S1474667017581057-main.pdf:/Users/sgillen/Textbooks/Papers/1-s2.0-S1474667017581057-main.pdf:application/pdf}
+}
+
+
+@misc{stable-baselines,
+  author = {Hill, Ashley and Raffin, Antonin and Ernestus, Maximilian and Gleave, Adam and Kanervisto, Anssi and Traore, Rene and Dhariwal, Prafulla and Hesse, Christopher and Klimov, Oleg and Nichol, Alex and Plappert, Matthias and Radford, Alec and Schulman, John and Sidor, Szymon and Wu, Yuhuai},
+  title = {Stable Baselines},
+  year = {2018},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/hill-a/stable-baselines}},
+}
+
+@article{spong_swing_1994,
+	title = {Swing up control of the acrobot using partial feedback linearization *},
+	volume = {27},
+	issn = {14746670},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S1474667017474040},
+	doi = {10.1016/S1474-6670(17)47404-0},
+	abstract = {In this paper we study the swing up control problem for the Acrobot using partial feedback linearization. We give conditions under which the response of either degree of freedom may be globally decoupled from the response of the other and linearized. This result can be used as a starting point to design swing up control algorithms. Analysis of the resulting zero dynamics shows interesting and rich behavior. Simulation results are presented showing the swing up motion resulting from the partial feedback linearization design.},
+	language = {en},
+	number = {14},
+	urldate = {2020-03-13},
+	journal = {IFAC Proceedings Volumes},
+	author = {Spong, Mark W.},
+	month = sep,
+	year = {1994},
+	pages = {833--838},
+	file = {1-s2.0-S1474667017474040-main.pdf:/Users/sgillen/Textbooks/Papers/1-s2.0-S1474667017474040-main.pdf:application/pdf}
+}
+
+@article{haarnoja_soft_2018,
+	title = {Soft {Actor}-{Critic}: {Off}-{Policy} {Maximum} {Entropy} {Deep} {Reinforcement} {Learning} with a {Stochastic} {Actor}},
+	shorttitle = {Soft {Actor}-{Critic}},
+	url = {http://arxiv.org/abs/1801.01290},
+	abstract = {Model-free deep reinforcement learning (RL) algorithms have been demonstrated on a range of challenging decision making and control tasks. However, these methods typically suffer from two major challenges: very high sample complexity and brittle convergence properties, which necessitate meticulous hyperparameter tuning. Both of these challenges severely limit the applicability of such methods to complex, real-world domains. In this paper, we propose soft actor-critic, an offpolicy actor-critic deep RL algorithm based on the maximum entropy reinforcement learning framework. In this framework, the actor aims to maximize expected reward while also maximizing entropy. That is, to succeed at the task while acting as randomly as possible. Prior deep RL methods based on this framework have been formulated as Q-learning methods. By combining off-policy updates with a stable stochastic actor-critic formulation, our method achieves state-of-the-art performance on a range of continuous control benchmark tasks, outperforming prior on-policy and off-policy methods. Furthermore, we demonstrate that, in contrast to other off-policy algorithms, our approach is very stable, achieving very similar performance across different random seeds.},
+	language = {en},
+	urldate = {2020-03-13},
+	journal = {arXiv:1801.01290 [cs, stat]},
+	author = {Haarnoja, Tuomas and Zhou, Aurick and Abbeel, Pieter and Levine, Sergey},
+	month = aug,
+	year = {2018},
+	note = {arXiv: 1801.01290},
+	keywords = {Computer Science - Machine Learning, Statistics - Machine Learning, Computer Science - Artificial Intelligence},
+	file = {1801.01290.pdf:/Users/sgillen/Textbooks/Papers/1801.01290.pdf:application/pdf}
+}
+
+@article{wiklendt_small_2009,
+	title = {A small spiking neural network with {LQR} control applied to the acrobot},
+	volume = {18},
+	issn = {0941-0643, 1433-3058},
+	url = {http://link.springer.com/10.1007/s00521-008-0187-1},
+	doi = {10.1007/s00521-008-0187-1},
+	abstract = {This paper presents the results of a computer simulation which, combined a small network of spiking neurons with linear quadratic regulator (LQR) control to solve the acrobot swing-up and balance task. To our knowledge, this task has not been previously solved with spiking neural networks. Input to the network was drawn from the state of the acrobot, and output was torque, either directly applied to the actuated joint, or via the switching of an LQR controller designed for balance. The neural network’s weights were tuned using a (l + k)-evolution strategy without recombination, and neurons’ parameters, were chosen to roughly approximate biological neurons.},
+	language = {en},
+	number = {4},
+	urldate = {2020-03-13},
+	journal = {Neural Computing and Applications},
+	author = {Wiklendt, Lukasz and Chalup, Stephan and Middleton, Rick},
+	month = may,
+	year = {2009},
+	pages = {369--375},
+	file = {10.1.1.160.330.pdf:/Users/sgillen/Textbooks/Papers/10.1.1.160.330.pdf:application/pdf}
+}
+
+@article{barth-maron_distributed_2018,
+	title = {Distributed {Distributional} {Deterministic} {Policy} {Gradients}},
+	url = {http://arxiv.org/abs/1804.08617},
+	abstract = {This work adopts the very successful distributional perspective on reinforcement learning and adapts it to the continuous control setting. We combine this within a distributed framework for off-policy learning in order to develop what we call the Distributed Distributional Deep Deterministic Policy Gradient algorithm, D4PG. We also combine this technique with a number of additional, simple improvements such as the use of N -step returns and prioritized experience replay. Experimentally we examine the contribution of each of these individual components, and show how they interact, as well as their combined contributions. Our results show that across a wide variety of simple control tasks, difﬁcult manipulation tasks, and a set of hard obstacle-based locomotion tasks the D4PG algorithm achieves state of the art performance.},
+	language = {en},
+	urldate = {2020-03-13},
+	journal = {arXiv:1804.08617 [cs, stat]},
+	author = {Barth-Maron, Gabriel and Hoffman, Matthew W. and Budden, David and Dabney, Will and Horgan, Dan and TB, Dhruva and Muldal, Alistair and Heess, Nicolas and Lillicrap, Timothy},
+	month = apr,
+	year = {2018},
+	note = {arXiv: 1804.08617},
+	keywords = {Computer Science - Machine Learning, Statistics - Machine Learning, Computer Science - Artificial Intelligence},
+	file = {1804.08617.pdf:/Users/sgillen/Downloads/1804.08617.pdf:application/pdf}
+}
+
+@misc{garage,
+ author = {The garage contributors},
+ title = {Garage: A toolkit for reproducible reinforcement learning research},
+ year = {2019},
+ publisher = {GitHub},
+ journal = {GitHub repository},
+ howpublished = {\url{https://github.com/rlworkgroup/garage}},
+ commit = {be070842071f736eb24f28e4b902a9f144f5c97b}
+}
+
+@MISC{coumans2019,
+author =   {Erwin Coumans and Yunfei Bai},
+title =    {PyBullet, a Python module for physics simulation for games, robotics and machine learning},
+howpublished = {\url{http://pybullet.org}},
+year = {2016--2019}
+}
+
+@misc{1606.01540,
+  Author = {Greg Brockman and Vicki Cheung and Ludwig Pettersson and Jonas Schneider and John Schulman and Jie Tang and Wojciech Zaremba},
+  Title = {OpenAI Gym},
+  Year = {2016},
+  Eprint = {arXiv:1606.01540},
+}
+
+@techreport{deepmindcontrolsuite2018,
+  title = {Deep{Mind} Control Suite},
+  author = {Yuval Tassa and Yotam Doron and Alistair Muldal and Tom Erez
+            and Yazhe Li and Diego de Las Casas and David Budden and Abbas
+            Abdolmaleki and Josh Merel and Andrew Lefrancq and Timothy Lillicrap
+            and Martin Riedmiller},
+  year = 2018,
+  month = jan,
+  howpublished = {https://arxiv.org/abs/1801.00690},
+  url = {https://arxiv.org/abs/1801.00690},
+  volume = {abs/1504.04804},
+  institution = {DeepMind},
+}
+
+@article{schulman_trust_2015,
+	title = {Trust {Region} {Policy} {Optimization}},
+	url = {http://arxiv.org/abs/1502.05477},
+	abstract = {We describe an iterative procedure for optimizing policies, with guaranteed monotonic improvement. By making several approximations to the theoretically-justiï¬ed procedure, we develop a practical algorithm, called Trust Region Policy Optimization (TRPO). This algorithm is similar to natural policy gradient methods and is effective for optimizing large nonlinear policies such as neural networks. Our experiments demonstrate its robust performance on a wide variety of tasks: learning simulated robotic swimming, hopping, and walking gaits; and playing Atari games using images of the screen as input. Despite its approximations that deviate from the theory, TRPO tends to give monotonic improvement, with little tuning of hyperparameters.},
+	language = {en},
+	urldate = {2019-03-01},
+	journal = {arXiv:1502.05477 [cs]},
+	author = {Schulman, John and Levine, Sergey and Moritz, Philipp and Jordan, Michael I. and Abbeel, Pieter},
+	month = feb,
+	year = {2015},
+	note = {arXiv: 1502.05477},
+	keywords = {Computer Science - Machine Learning},
+	file = {Schulman et al. - 2015 - Trust Region Policy Optimization.pdf:/Users/sgillen/Zotero/storage/WB8DYQ5W/Schulman et al. - 2015 - Trust Region Policy Optimization.pdf:application/pdf}
+}
+
+@article{lillicrap_continuous_2015,
+	title = {Continuous control with deep reinforcement learning},
+	url = {http://arxiv.org/abs/1509.02971},
+	abstract = {We adapt the ideas underlying the success of Deep Q-Learning to the continuous action domain. We present an actor-critic, model-free algorithm based on the deterministic policy gradient that can operate over continuous action spaces. Using the same learning algorithm, network architecture and hyper-parameters, our algorithm robustly solves more than 20 simulated physics tasks, including classic problems such as cartpole swing-up, dexterous manipulation, legged locomotion and car driving. Our algorithm is able to ï¬nd policies whose performance is competitive with those found by a planning algorithm with full access to the dynamics of the domain and its derivatives. We further demonstrate that for many of the tasks the algorithm can learn policies âend-to-endâ: directly from raw pixel inputs.},
+	language = {en},
+	urldate = {2019-03-01},
+	journal = {arXiv:1509.02971 [cs, stat]},
+	author = {Lillicrap, Timothy P. and Hunt, Jonathan J. and Pritzel, Alexander and Heess, Nicolas and Erez, Tom and Tassa, Yuval and Silver, David and Wierstra, Daan},
+	month = sep,
+	year = {2015},
+	note = {arXiv: 1509.02971},
+	keywords = {Computer Science - Machine Learning, Statistics - Machine Learning},
+	file = {Lillicrap et al. - 2015 - Continuous control with deep reinforcement learnin.pdf:/Users/sgillen/Zotero/storage/ZZREKUFP/Lillicrap et al. - 2015 - Continuous control with deep reinforcement learnin.pdf:application/pdf}
+}
+
+@article{bacon_option-critic_2016,
+	title = {The {Option}-{Critic} {Architecture}},
+	url = {http://arxiv.org/abs/1609.05140},
+	abstract = {Temporal abstraction is key to scaling up learning and planning in reinforcement learning. While planning with temporally extended actions is well understood, creating such abstractions autonomously from data has remained challenging. We tackle this problem in the framework of options [Sutton, Precup \& Singh, 1999; Precup, 2000]. We derive policy gradient theorems for options and propose a new option-critic architecture capable of learning both the internal policies and the termination conditions of options, in tandem with the policy over options, and without the need to provide any additional rewards or subgoals. Experimental results in both discrete and continuous environments showcase the ï¬exibility and efï¬ciency of the framework.},
+	language = {en},
+	urldate = {2019-03-01},
+	journal = {arXiv:1609.05140 [cs]},
+	author = {Bacon, Pierre-Luc and Harb, Jean and Precup, Doina},
+	month = sep,
+	year = {2016},
+	note = {arXiv: 1609.05140},
+	keywords = {Computer Science - Artificial Intelligence},
+	file = {Bacon et al. - 2016 - The Option-Critic Architecture.pdf:/Users/sgillen/Zotero/storage/RCGSXZRY/Bacon et al. - 2016 - The Option-Critic Architecture.pdf:application/pdf}
+}
+
+@article{shazeer_outrageously_2017,
+	title = {Outrageously {Large} {Neural} {Networks}: {The} {Sparsely}-{Gated} {Mixture}-of-{Experts} {Layer}},
+	shorttitle = {Outrageously {Large} {Neural} {Networks}},
+	url = {http://arxiv.org/abs/1701.06538},
+	abstract = {The capacity of a neural network to absorb information is limited by its number of parameters. Conditional computation, where parts of the network are active on a per-example basis, has been proposed in theory as a way of dramatically increasing model capacity without a proportional increase in computation. In practice, however, there are signiï¬cant algorithmic and performance challenges. In this work, we address these challenges and ï¬nally realize the promise of conditional computation, achieving greater than 1000x improvements in model capacity with only minor losses in computational efï¬ciency on modern GPU clusters. We introduce a Sparsely-Gated Mixture-of-Experts layer (MoE), consisting of up to thousands of feed-forward sub-networks. A trainable gating network determines a sparse combination of these experts to use for each example. We apply the MoE to the tasks of language modeling and machine translation, where model capacity is critical for absorbing the vast quantities of knowledge available in the training corpora. We present model architectures in which a MoE with up to 137 billion parameters is applied convolutionally between stacked LSTM layers. On large language modeling and machine translation benchmarks, these models achieve signiï¬cantly better results than state-of-the-art at lower computational cost.},
+	language = {en},
+	urldate = {2019-03-01},
+	journal = {arXiv:1701.06538 [cs, stat]},
+	author = {Shazeer, Noam and Mirhoseini, Azalia and Maziarz, Krzysztof and Davis, Andy and Le, Quoc and Hinton, Geoffrey and Dean, Jeff},
+	month = jan,
+	year = {2017},
+	note = {arXiv: 1701.06538},
+	keywords = {Computer Science - Machine Learning, Computer Science - Computation and Language, Computer Science - Neural and Evolutionary Computing, Statistics - Machine Learning},
+	file = {Shazeer et al. - 2017 - Outrageously Large Neural Networks The Sparsely-G.pdf:/Users/sgillen/Zotero/storage/V6BYMJTZ/Shazeer et al. - 2017 - Outrageously Large Neural Networks The Sparsely-G.pdf:application/pdf}
+}
+
+@article{heess_emergence_2017,
+	title = {Emergence of {Locomotion} {Behaviours} in {Rich} {Environments}},
+	url = {http://arxiv.org/abs/1707.02286},
+	abstract = {The reinforcement learning paradigm allows, in principle, for complex behaviours to be learned directly from simple reward signals. In practice, however, it is common to carefully hand-design the reward function to encourage a particular solution, or to derive it from demonstration data. In this paper explore how a rich environment can help to promote the learning of complex behavior. Speciï¬cally, we train agents in diverse environmental contexts, and ï¬nd that this encourages the emergence of robust behaviours that perform well across a suite of tasks. We demonstrate this principle for locomotion â behaviours that are known for their sensitivity to the choice of reward. We train several simulated bodies on a diverse set of challenging terrains and obstacles, using a simple reward function based on forward progress. Using a novel scalable variant of policy gradient reinforcement learning, our agents learn to run, jump, crouch and turn as required by the environment without explicit reward-based guidance. A visual depiction of highlights of the learned behavior can be viewed in this video.},
+	language = {en},
+	urldate = {2019-03-01},
+	journal = {arXiv:1707.02286 [cs]},
+	author = {Heess, Nicolas and TB, Dhruva and Sriram, Srinivasan and Lemmon, Jay and Merel, Josh and Wayne, Greg and Tassa, Yuval and Erez, Tom and Wang, Ziyu and Eslami, S. M. Ali and Riedmiller, Martin and Silver, David},
+	month = jul,
+	year = {2017},
+	note = {arXiv: 1707.02286},
+	keywords = {Computer Science - Artificial Intelligence},
+	file = {Heess et al. - 2017 - Emergence of Locomotion Behaviours in Rich Environ.pdf:/Users/sgillen/Zotero/storage/SRJQ5NGU/Heess et al. - 2017 - Emergence of Locomotion Behaviours in Rich Environ.pdf:application/pdf}
+}
+
+@article{schulman_proximal_2017,
+	title = {Proximal {Policy} {Optimization} {Algorithms}},
+	url = {http://arxiv.org/abs/1707.06347},
+	abstract = {We propose a new family of policy gradient methods for reinforcement learning, which alternate between sampling data through interaction with the environment, and optimizing a âsurrogateâ objective function using stochastic gradient ascent. Whereas standard policy gradient methods perform one gradient update per data sample, we propose a novel objective function that enables multiple epochs of minibatch updates. The new methods, which we call proximal policy optimization (PPO), have some of the beneï¬ts of trust region policy optimization (TRPO), but they are much simpler to implement, more general, and have better sample complexity (empirically). Our experiments test PPO on a collection of benchmark tasks, including simulated robotic locomotion and Atari game playing, and we show that PPO outperforms other online policy gradient methods, and overall strikes a favorable balance between sample complexity, simplicity, and wall-time.},
+	language = {en},
+	urldate = {2019-03-01},
+	journal = {arXiv:1707.06347 [cs]},
+	author = {Schulman, John and Wolski, Filip and Dhariwal, Prafulla and Radford, Alec and Klimov, Oleg},
+	month = jul,
+	year = {2017},
+	note = {arXiv: 1707.06347},
+	keywords = {Computer Science - Machine Learning},
+	file = {Schulman et al. - 2017 - Proximal Policy Optimization Algorithms.pdf:/Users/sgillen/Zotero/storage/3V433ET3/Schulman et al. - 2017 - Proximal Policy Optimization Algorithms.pdf:application/pdf}
+}
+
+@article{openai_learning_2018,
+	title = {Learning {Dexterous} {In}-{Hand} {Manipulation}},
+	url = {http://arxiv.org/abs/1808.00177},
+	abstract = {We use reinforcement learning (RL) to learn dexterous in-hand manipulation policies which can perform vision-based object reorientation on a physical Shadow Dexterous Hand. The training is performed in a simulated environment in which we randomize many of the physical properties of the system like friction coefï¬cients and an objectâs appearance. Our policies transfer to the physical robot despite being trained entirely in simulation. Our method does not rely on any human demonstrations, but many behaviors found in human manipulation emerge naturally, including ï¬nger gaiting, multi-ï¬nger coordination, and the controlled use of gravity. Our results were obtained using the same distributed RL system that was used to train OpenAI Five [43]. We also include a video of our results: https://youtu. be/jwSbzNHGflM.},
+	language = {en},
+	urldate = {2019-03-01},
+	journal = {arXiv:1808.00177 [cs, stat]},
+	author = {OpenAI and Andrychowicz, Marcin and Baker, Bowen and Chociej, Maciek and Jozefowicz, Rafal and McGrew, Bob and Pachocki, Jakub and Petron, Arthur and Plappert, Matthias and Powell, Glenn and Ray, Alex and Schneider, Jonas and Sidor, Szymon and Tobin, Josh and Welinder, Peter and Weng, Lilian and Zaremba, Wojciech},
+	month = aug,
+	year = {2018f},
+	note = {arXiv: 1808.00177},
+	keywords = {Computer Science - Machine Learning, Statistics - Machine Learning, Computer Science - Artificial Intelligence, Computer Science - Robotics},
+	file = {OpenAI et al. - 2018 - Learning Dexterous In-Hand Manipulation.pdf:/Users/sgillen/Zotero/storage/V3W3FTF9/OpenAI et al. - 2018 - Learning Dexterous In-Hand Manipulation.pdf:application/pdf}
+}
+
+@article{hwangbo_learning_2019,
+	title = {Learning agile and dynamic motor skills for legged robots},
+	volume = {4},
+	issn = {2470-9476},
+	url = {http://robotics.sciencemag.org/lookup/doi/10.1126/scirobotics.aau5872},
+	doi = {10.1126/scirobotics.aau5872},
+	language = {en},
+	number = {26},
+	urldate = {2019-03-01},
+	journal = {Science Robotics},
+	author = {Hwangbo, Jemin and Lee, Joonho and Dosovitskiy, Alexey and Bellicoso, Dario and Tsounis, Vassilios and Koltun, Vladlen and Hutter, Marco},
+	month = jan,
+	year = {2019},
+	pages = {eaau5872},
+	file = {Hwangbo et al. - 2019 - Learning agile and dynamic motor skills for legged.pdf:/Users/sgillen/Zotero/storage/QE9BMR6L/Hwangbo et al. - 2019 - Learning agile and dynamic motor skills for legged.pdf:application/pdf}
+}
+
+@article{yoshimoto_acrobot_2005,
+	title = {Acrobot control by learning the switching of multiple controllers},
+	volume = {9},
+	issn = {1433-5298, 1614-7456},
+	url = {http://link.springer.com/10.1007/s10015-004-0340-6},
+	doi = {10.1007/s10015-004-0340-6},
+	abstract = {Reinforcement learning (RL) has been applied to constructing controllers for nonlinear systems in recent years. Since RL methods do not require an exact dynamics model of the controlled object, they have a higher ï¬exibility and potential for adaptation to uncertain or nonstationary environments than methods based on traditional control theory. If the target system has a continuous state space whose dynamic characteristics are nonlinear, however, RL methods often suffer from unstable learning processes. For this reason, it is difï¬cult to apply RL methods to control tasks in the real world. In order to overcome the disadvantage of RL methods, we propose an RL scheme combining multiple controllers, each of which is constructed based on traditional control theory. We then apply it to a swinging-up and stabilizing task of an acrobot with a limited torque, which is a typical but difï¬cult task in the ï¬eld of nonlinear control theory. Our simulation result showed that our method was able to realize stable learning and to achieve fairly good control.},
+	language = {en},
+	number = {2},
+	urldate = {2019-03-01},
+	journal = {Artificial Life and Robotics},
+	author = {Yoshimoto, Junichiro and Nishimura, Masaya and Tokita, Yoichi and Ishii, Shin},
+	month = may,
+	year = {2005},
+	pages = {67--71},
+	file = {Yoshimoto et al. - 2005 - Acrobot control by learning the switching of multi.pdf:/Users/sgillen/Textbooks/Papers/Yoshimoto et al. - 2005 - Acrobot control by learning the switching of multi.pdf:application/pdf}
+}
+
+@inproceedings{biro_double_2010,
+	address = {Timisoara, Romania},
+	title = {Double inverted pendulum control by linear quadratic regulator and reinforcement learning},
+	isbn = {978-1-4244-7432-5},
+	url = {http://ieeexplore.ieee.org/document/5491309/},
+	doi = {10.1109/ICCCYB.2010.5491309},
+	abstract = {The paper gives an original combination of linear quadratic regulator and reinforcement learning dedicated to the position control of a double inverted pendulum system. An agent based on a modified Sarsa algorithm is applied to swing up the pendulum. The linear quadratic regulator is applied to the linearized mathematical model of the process in the vicinity of upright position. Digital simulation results show the performance of the new approach.},
+	language = {en},
+	urldate = {2019-03-01},
+	booktitle = {2010 {International} {Joint} {Conference} on {Computational} {Cybernetics} and {Technical} {Informatics}},
+	publisher = {IEEE},
+	author = {Biro, Sandor and Precup, Radu-Emil and Todinca, Doru},
+	year = {2010},
+	pages = {159--164},
+	file = {Biro et al. - 2010 - Double inverted pendulum control by linear quadrat.pdf:/Users/sgillen/Textbooks/Papers/Biro et al. - 2010 - Double inverted pendulum control by linear quadrat.pdf:application/pdf}
+}
+
+@article{abramova_combining_nodate,
+	title = {Combining {Reinforcement} {Learning} {And} {Optimal} {Control} {For} {The} {Control} {Of} {Nonlinear} {Dynamical} {Systems}},
+	language = {en},
+	author = {Abramova, Ekaterina},
+	pages = {182},
+	file = {Abramova - Combining Reinforcement Learning And Optimal Contr.pdf:/Users/sgillen/Textbooks/Papers/Abramova - Combining Reinforcement Learning And Optimal Contr.pdf:application/pdf}
+}
+
+@article{leonessa_nonlinear_2001,
+	title = {Nonlinear system stabilization via hierarchical switching control},
+	volume = {46},
+	issn = {00189286},
+	url = {http://ieeexplore.ieee.org/document/898692/},
+	doi = {10.1109/9.898692},
+	abstract = {In this paper, a nonlinear control-system design framework predicated on a hierarchical switching controller architecture parameterized over a set of moving system equilibria is developed. Specifically, using equilibria-dependent Lyapunov functions, a hierarchical nonlinear control strategy is developed that stabilizes a given nonlinear system by stabilizing a collection of nonlinear controlled subsystems. The switching nonlinear controller architecture is designed based on a generalized lower semicontinuous Lyapunov function obtained by minimizing a potential function over a given switching set induced by the parameterized system equilibria. The !!! proposed framework provides a rigorous alternative to designing gain-scheduled feedback controllers and guarantees local and global closed-loop system stability for general nonlinear systems.},
+	language = {en},
+	number = {1},
+	urldate = {2019-08-01},
+	journal = {IEEE Transactions on Automatic Control},
+	author = {Leonessa, A. and Haddad, W.M. and Chellaboina, V.S.},
+	month = jan,
+	year = {2001},
+	pages = {17--28},
+	file = {00898692.pdf:/Users/sgillen/Textbooks/Papers/00898692.pdf:application/pdf}
+}
+
+@article{lee_robust_2019,
+	title = {Robust {Recovery} {Controller} for a {Quadrupedal} {Robot} using {Deep} {Reinforcement} {Learning}},
+	url = {http://arxiv.org/abs/1901.07517},
+	abstract = {The ability to recover from a fall is an essential feature for a legged robot to navigate in challenging environments robustly. Until today, there has been very little progress on this topic. Current solutions mostly build upon (heuristically) predeï¬ned trajectories, resulting in unnatural behaviors and requiring considerable effort in engineering system-speciï¬c components. In this paper, we present an approach based on model-free Deep Reinforcement Learning (RL) to control recovery maneuvers of quadrupedal robots using a hierarchical behavior-based controller. The controller consists of four neural network policies including three behaviors and one behavior selector to coordinate them. Each of them is trained individually in simulation and deployed directly on a real system. We experimentally validate our approach on the quadrupedal robot ANYmal, which is a dog-sized quadrupedal system with 12 degrees of freedom. With our method, ANYmal manifests dynamic and reactive recovery behaviors to recover from an arbitrary fall conï¬guration within less than 5 seconds. We tested the recovery maneuver more than 100 times, and the success rate was higher than 97 \%.},
+	language = {en},
+	urldate = {2019-08-09},
+	journal = {arXiv:1901.07517 [cs]},
+	author = {Lee, Joonho and Hwangbo, Jemin and Hutter, Marco},
+	month = jan,
+	year = {2019},
+	note = {arXiv: 1901.07517},
+	keywords = {Computer Science - Machine Learning, Computer Science - Artificial Intelligence, Computer Science - Robotics, Electrical Engineering and Systems Science - Systems and Control},
+	file = {1901.07517.pdf:/Users/sgillen/Textbooks/Papers/1901.07517.pdf:application/pdf}
+}
+
+@article{schulman_high-dimensional_2015,
+	title = {High-{Dimensional} {Continuous} {Control} {Using} {Generalized} {Advantage} {Estimation}},
+	url = {http://arxiv.org/abs/1506.02438},
+	abstract = {Policy gradient methods are an appealing approach in reinforcement learning because they directly optimize the cumulative reward and can straightforwardly be used with nonlinear function approximators such as neural networks. The two main challenges are the large number of samples typically required, and the difï¬culty of obtaining stable and steady improvement despite the nonstationarity of the incoming data. We address the ï¬rst challenge by using value functions to substantially reduce the variance of policy gradient estimates at the cost of some bias, with an exponentially-weighted estimator of the advantage function that is analogous to TD(Î»). We address the second challenge by using trust region optimization procedure for both the policy and the value function, which are represented by neural networks.},
+	language = {en},
+	urldate = {2019-09-07},
+	journal = {arXiv:1506.02438 [cs]},
+	author = {Schulman, John and Moritz, Philipp and Levine, Sergey and Jordan, Michael and Abbeel, Pieter},
+	month = jun,
+	year = {2015},
+	note = {arXiv: 1506.02438},
+	keywords = {Computer Science - Machine Learning, Computer Science - Robotics, Electrical Engineering and Systems Science - Systems and Control},
+	file = {1506.02438.pdf:/Users/sgillen/Textbooks/Papers/1506.02438.pdf:application/pdf}
+}
+
+@article{kingma_adam:_2014,
+	title = {Adam: {A} {Method} for {Stochastic} {Optimization}},
+	shorttitle = {Adam},
+	url = {http://arxiv.org/abs/1412.6980},
+	abstract = {We introduce Adam, an algorithm for ï¬rst-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments. The method is straightforward to implement, is computationally efï¬cient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the inï¬nity norm.},
+	language = {en},
+	urldate = {2019-09-08},
+	journal = {arXiv:1412.6980 [cs]},
+	author = {Kingma, Diederik P. and Ba, Jimmy},
+	month = dec,
+	year = {2014},
+	note = {arXiv: 1412.6980},
+	keywords = {Computer Science - Machine Learning},
+	file = {1412.6980.pdf:/Users/sgillen/Textbooks/Papers/1412.6980.pdf:application/pdf}
+}
+
+@article{parr_reinforcement_1998,
+	title = {Reinforcement {Learning} with {Hierarchies} of {Machines}},
+	abstract = {We present a new approach to reinforcement learning in which the policies considered by the learning process are constrained by hierarchies of partially specified machines. This allows for the use of prior knowledge to reduce the search space and provides a framework in which knowledge can be transferred across problems and in which component solutions can be recombined to solve larger and more complicated problems. Our approach can be seen as providing a link between reinforcement learning and "behavior-based" or "teleo-reactive" approaches to control. We present provably convergent algorithms for problem-solving and learning with hierarchical machines and demonstrate their effectiveness on a problem with several thousand states.},
+	language = {en},
+	journal = {NIPS},
+	author = {Parr, Ronald and Russell, Stuart J},
+	year = {1998},
+	pages = {7},
+	file = {1384-reinforcement-learning-with-hierarchies-of-machines.pdf:/Users/sgillen/Textbooks/Papers/1384-reinforcement-learning-with-hierarchies-of-machines.pdf:application/pdf}
+}
+
+@article{mnih_asynchronous_2016,
+	title = {Asynchronous {Methods} for {Deep} {Reinforcement} {Learning}},
+	url = {http://arxiv.org/abs/1602.01783},
+	abstract = {We !! propose a conceptually simple and lightweight framework for deep reinforcement learning that uses asynchronous gradient descent for optimization of deep neural network controllers. We present asynchronous variants of four standard reinforcement learning algorithms and show that parallel actor-learners have a stabilizing effect on training allowing all four methods to successfully train neural network controllers. The best performing method, an asynchronous variant of actor-critic, surpasses the current state-of-the-art on the Atari domain while training for half the time on a single multi-core CPU instead of a GPU. Furthermore, we show that asynchronous actor-critic succeeds on a wide variety of continuous motor control problems as well as on a new task of navigating random 3D mazes using a visual input.},
+	language = {en},
+	urldate = {2019-09-21},
+	journal = {arXiv:1602.01783 [cs]},
+	author = {Mnih, Volodymyr and Badia, AdriÃ  PuigdomÃšnech and Mirza, Mehdi and Graves, Alex and Lillicrap, Timothy P. and Harley, Tim and Silver, David and Kavukcuoglu, Koray},
+	month = feb,
+	year = {2016},
+	note = {arXiv: 1602.01783},
+	keywords = {Computer Science - Machine Learning},
+	file = {1602.01783.pdf:/Users/sgillen/Textbooks/Papers/1602.01783.pdf:application/pdf}
+}
+
+@book{tedrake_drake:_2019,
+	title = {Drake: {Model}-based design and verification for robotics},
+	url = {https://drake.mit.edu},
+	author = {Tedrake, Russ and Team, the Drake Development},
+	year = {2019}
+}
+
+@article{williams_simple_1992,
+	title = {Simple {Statistical} {Gradient}-{Following} {Algorithms} for {Connectionist} {Reinforcement} {Learning}},
+	abstract = {This article presents a general class of associative reinforcement learning algorithms for connectionist networks containing stochastic units. These algorithms, called REINFORCE algorithms, are shown to make weight adjustments in a direction that lies along the gradient of expected reinforcement in both immediate-reinforcement tasks and certain limited forms of delayed-reinforcement tasks, and they do this without explicitly computing gradient estimates or even storing information from which such estimates could be computed. Speci c examples of such algorithms are presented, some of which bear a close relationship to certain existing algorithms while others are novel but potentially interesting in their own right. Also given are results that show how such algorithms can be naturally integrated with backpropagation. We close with a brief discussion of a number of additional issues surrounding the use of such algorithms, including what is known about their limiting behaviors as well as further considerations that might be used to help develop similar but potentially more powerful reinforcement learning algorithms.},
+	language = {en},
+	journal = {Machine Learning},
+	author = {Williams, Ronald J},
+	year = {1992},
+	pages = {27},
+	file = {10.1.1.31.2545.pdf:/Users/sgillen/Textbooks/Papers/10.1.1.31.2545.pdf:application/pdf}
+}
+
+@inproceedings{randlov_combining_2000,
+	address = {San Francisco, CA, USA},
+	series = {{ICML} '00},
+	title = {Combining {Reinforcement} {Learning} with a {Local} {Control} {Algorithm}},
+	isbn = {1-55860-707-2},
+	url = {http://dl.acm.org/citation.cfm?id=645529.657804},
+	booktitle = {Proceedings of the {Seventeenth} {International} {Conference} on {Machine} {Learning}},
+	publisher = {Morgan Kaufmann Publishers Inc.},
+	author = {RandlÃžv, Jette and Barto, Andrew G. and Rosenstein, Michael T.},
+	year = {2000},
+	pages = {775--782},
+	file = {RandlÃžv et al. - Combining Reinforcement Learning with a Local Cont.pdf:/Users/sgillen/Zotero/storage/IANDQ6VV/RandlÃžv et al. - Combining Reinforcement Learning with a Local Cont.pdf:application/pdf}
+}
+
+@incollection{dayan_feudal_1993,
+	title = {Feudal {Reinforcement} {Learning}},
+	url = {http://papers.nips.cc/paper/714-feudal-reinforcement-learning.pdf},
+	booktitle = {Advances in {Neural} {Information} {Processing} {Systems} 5},
+	publisher = {Morgan-Kaufmann},
+	author = {Dayan, Peter and Hinton, Geoffrey E},
+	editor = {Hanson, S. J. and Cowan, J. D. and Giles, C. L.},
+	year = {1993},
+	pages = {271--278},
+	file = {Dayan - Feudal Reinforcement Learning.pdf:/Users/sgillen/Zotero/storage/TAETI6QL/Dayan - Feudal Reinforcement Learning.pdf:application/pdf}
+}
+
+@article{doya_multiple_2002,
+	title = {Multiple {Model}-{Based} {Reinforcement} {Learning}},
+	volume = {14},
+	issn = {0899-7667, 1530-888X},
+	url = {http://www.mitpressjournals.org/doi/10.1162/089976602753712972},
+	doi = {10.1162/089976602753712972},
+	language = {en},
+	number = {6},
+	urldate = {2019-09-24},
+	journal = {Neural Computation},
+	author = {Doya, Kenji and Samejima, Kazuyuki and Katagiri, Ken-ichi and Kawato, Mitsuo},
+	month = jun,
+	year = {2002},
+	pages = {1347--1369},
+	file = {10.1.1.5.6184.pdf:/Users/sgillen/Textbooks/Papers/10.1.1.5.6184.pdf:application/pdf}
+}
+
+@article{doya_multiple_2002-1,
+	title = {Multiple {Model}-{Based} {Reinforcement} {Learning}},
+	volume = {14},
+	issn = {0899-7667, 1530-888X},
+	url = {http://www.mitpressjournals.org/doi/10.1162/089976602753712972},
+	doi = {10.1162/089976602753712972},
+	language = {en},
+	number = {6},
+	urldate = {2019-09-25},
+	journal = {Neural Computation},
+	author = {Doya, Kenji and Samejima, Kazuyuki and Katagiri, Ken-ichi and Kawato, Mitsuo},
+	month = jun,
+	year = {2002},
+	pages = {1347--1369},
+	file = {10.1.1.5.6184.pdf:/Users/sgillen/Textbooks/Papers/10.1.1.5.6184.pdf:application/pdf}
+}
+
+@misc{baselines,
+  author = {Dhariwal, Prafulla and Hesse, Christopher and Klimov, Oleg and Nichol, Alex and Plappert, Matthias and Radford, Alec and Schulman, John and Sidor, Szymon and Wu, Yuhuai and Zhokhov, Peter},
+  title = {OpenAI Baselines},
+  year = {2017},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/openai/baselines}},
+}
+
+@article{doya_reinforcement_2000,
+	title = {Reinforcement {Learning} in {Continuous} {Time} and {Space}},
+	volume = {12},
+	issn = {0899-7667, 1530-888X},
+	url = {http://www.mitpressjournals.org/doi/10.1162/089976600300015961},
+	doi = {10.1162/089976600300015961},
+	language = {en},
+	number = {1},
+	urldate = {2019-09-26},
+	journal = {Neural Computation},
+	author = {Doya, Kenji},
+	month = jan,
+	year = {2000},
+	pages = {219--245},
+	file = {Doya00b.pdf:/Users/sgillen/Textbooks/Papers/Doya00b.pdf:application/pdf}
+}
+
+@misc{schulman_klimov_wolski_dhariwal_radford_2017, title={openai.com}, url={https://openai.com/blog/openai-baselines-ppo/}, journal={openai.com}, publisher={OpenAI}, author={Schulman , John and Klimov, Oleg and Wolski, Filip and Dhariwal, Prafulla and Radford, Alec}, year={2017}, month={Jul}}
