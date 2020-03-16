@@ -3,6 +3,7 @@ import seagul.envs
 
 from seagul.rl.run_utils import load_workspace
 from seagul.plot import smooth_bounded_curve
+from seagul.integration import wrap
 import matplotlib.pyplot as plt
 
 import numpy as np
@@ -14,7 +15,9 @@ from torch.multiprocessing import Pool
 from itertools import product
 import os
 
+#jup_dir = "/home/sgillen/work/ssac/switched_rl"
 jup_dir = os.getcwd()
+fig_dir = '../tex'
 
 def load_trials(trial_dir):
     directory = jup_dir + trial_dir
@@ -39,7 +42,7 @@ def load_trials(trial_dir):
     return ws_list, model_list, rewards
 
 
-def do_rollout(init_point = None):
+def do_rollout_switched(init_point = None):
     env = gym.make(ws['env_name'], **ws['env_config'])
 
     if init_point is not None:
@@ -49,10 +52,8 @@ def do_rollout(init_point = None):
 
     obs = torch.as_tensor(obs, dtype=torch.float32)
 
-    acts_list = []
-    obs1_list = []
-    obs2_list = []
-    rews_list = []
+    acts_list = []; obs1_list = []
+    obs2_list = []; rews_list = []
     path_list = []
 
     dtype = torch.float32
@@ -102,6 +103,47 @@ def do_rollout(init_point = None):
 
 
 
+def do_rollout(init_point = None):
+    env = gym.make(ws['env_name'], **ws['env_config'])
+
+    if init_point is not None:
+        obs = env.reset(init_point)
+    else:
+        obs = env.reset()
+
+    obs = torch.as_tensor(obs, dtype=torch.float32)
+
+    acts_list = []; obs1_list = []
+    rews_list = []
+
+    dtype = torch.float32
+    act_size = env.action_space.shape[0]
+    obs_size = env.observation_space.shape[0]
+
+    done = False
+    cur_step = 0
+
+    while not done:
+
+
+        acts, val,_,logp = model.step(obs.reshape(-1,obs_size))
+        acts = acts.reshape(-1, model.num_acts).detach()
+        #for _ in range(model.hold_count):
+        obs, rew, done, out = env.step(acts.numpy().reshape(-1))
+        obs1_list.append(out['full_state'])
+        obs = torch.as_tensor(obs, dtype=dtype)
+
+
+        acts_list.append(torch.as_tensor(acts.clone()))
+        rews_list.append(torch.as_tensor(rew, dtype=dtype))
+        cur_step += 1
+
+    ep_obs1 = torch.tensor(obs1_list).reshape(-1,4)
+    ep_acts = torch.stack(acts_list).reshape(-1, act_size)
+    ep_rews = torch.stack(rews_list).reshape(-1, 1)
+
+    return ep_obs1, ep_acts, ep_rews,  []
+
 # %%
 # This is us
 ws_list, model_list, rewards = load_trials("/data_needle/50k_slow_longer")
@@ -109,32 +151,38 @@ fig, ax = smooth_bounded_curve(rewards)
 plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
 ax.ticklabel_format(axis='x',style='sci')
 ax.set_title('Reward Curve')
-plt.show()
 
-#fig.savefig('reward_curve.pdf')
+#ws_list, model_list, rewards = load_trials("/data_needle/vsac_long")
+smooth_bounded_curve(rewards, ax=ax, color='red')
+ax.legend(['ssac', 'sac'],loc ='lower right')
 
-ws = ws_list[-1];
+fig.savefig('reward_curve.pdf')
+fig.show()
+#%%
+ws = ws_list[-1] # Just grab the last trial
 model = model_list[-1]
 
-
-#%%
 obs_hist, act_hist, rew_hist, lqr_on = do_rollout()
 print(lqr_on)
 
 t = np.array([i*.2 for i in range(act_hist.shape[0])])
-
-plt.step(t, act_hist)
-plt.ylabel('time (seconds)')
+plt.step(t, act_hist, 'k')
+plt.title('Actions')
+plt.xlabel('Time (seconds)')
 plt.ylabel('Torque (Nm)')
-plt.savefig('act_hist.pdf')
+plt.savefig(fig_dir = 'act_hist.pdf')
 plt.show(); plt.figure()
 
 
-plt.plot(t, obs_hist)
-plt.legend(['th1', 'th2', 'th1dot', 'th2dot'])
+t = np.array([i*.01 for i in range(obs_hist.shape[0])])
+plt.plot(t, obs_hist[:,0],'k')
+plt.plot(t, obs_hist[:,1],'r')
+plt.title('Actions')
+plt.xlabel('Time (seconds)')
+plt.ylabel('Angle (rad)')
+plt.legend(['th1', 'th2'])
 plt.savefig('obs_hist.pdf')
 plt.show()
-
 
 
 #%%
