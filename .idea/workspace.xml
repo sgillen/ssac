@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e3b39f0-52d6-4f3c-8277-c33fe1236921" name="Default Changelist" comment="" />
+    <list default="true" id="2e3b39f0-52d6-4f3c-8277-c33fe1236921" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/notebooks/switching/load_sg.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/notebooks/switching/load_sg.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/notebooks/switching/load_sg.py" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/notebooks/switching/load_sg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/notebooks/switching/present_march0.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/notebooks/switching/present_march0.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/notebooks/switching/run_needle_switched.py" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/notebooks/switching/run_needle_switched.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/notebooks/sym_rl/anal_pend.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/notebooks/sym_rl/anal_pend.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/plot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/rl/algos/sacn_adaptive.py" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/rl/algos/sacn_adaptive.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../seagul/seagul/rl/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../seagul/seagul/rl/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/switched_rl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/switched_rl.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/switched_rl/dm_gym/acrobot.py" beforeDir="false" afterPath="$PROJECT_DIR$/switched_rl/dm_gym/acrobot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/switched_rl/dm_testl.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/switched_rl/gate_generation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/switched_rl/gate_generation.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/switched_rl/meta_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/switched_rl/meta_run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/switched_rl/meta_run_switched.py" beforeDir="false" afterPath="$PROJECT_DIR$/switched_rl/meta_run_switched.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +34,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../seagul" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JupyterTrust" id="222cc450-f9f5-46bf-bc30-735951e322d1" />
   <component name="ProjectId" id="1YjDAtIvDgZubrDtYiZIkLcjxca" />
@@ -26,10 +45,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../seagul" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.project" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../external/dm_control" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -41,10 +63,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../seagul/seagul/notebooks/switching" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.run_needle_switched">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="switched_rl" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -67,20 +90,108 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="stable" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="switched_rl" />
+    <configuration name="cpu_gpu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="seagul" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../seagul/seagul/notebooks/scratch" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stable.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../seagul/seagul/notebooks/scratch/cpu_gpu.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="needle_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="seagul" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../seagul/seagul/notebooks/scratch" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../seagul/seagul/notebooks/switching/needle_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_needle" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="seagul" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../seagul/seagul/notebooks/switching" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../seagul/seagul/notebooks/switching/run_needle.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_needle_switched" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="seagul" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../seagul/seagul/notebooks/switching" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../seagul/seagul/notebooks/switching/run_needle_switched.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sac_needle_switch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="seagul" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../seagul/seagul/rl/algos" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../seagul/seagul/rl/algos/sac_needle_switch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -91,8 +202,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.stable" />
-        <item itemvalue="Python.stable" />
+        <item itemvalue="Python.run_needle_switched" />
+        <item itemvalue="Python.sac_needle_switch" />
+        <item itemvalue="Python.cpu_gpu" />
+        <item itemvalue="Python.needle_test" />
+        <item itemvalue="Python.run_needle" />
       </list>
     </recent_temporary>
   </component>
@@ -108,7 +222,18 @@
       <updated>1583446969995</updated>
       <workItem from="1583446972209" duration="704000" />
       <workItem from="1583447691808" duration="2499000" />
-      <workItem from="1583450457286" duration="4267000" />
+      <workItem from="1583450457286" duration="11237000" />
+      <workItem from="1583533231925" duration="6732000" />
+      <workItem from="1583548613547" duration="600000" />
+      <workItem from="1583549263368" duration="212000" />
+      <workItem from="1583549662505" duration="211000" />
+      <workItem from="1583549889059" duration="3688000" />
+      <workItem from="1583709353413" duration="762000" />
+      <workItem from="1583711891965" duration="16922000" />
+      <workItem from="1583794404525" duration="13372000" />
+      <workItem from="1583961687450" duration="101000" />
+      <workItem from="1583961797324" duration="6143000" />
+      <workItem from="1583980875004" duration="10306000" />
     </task>
     <servers />
   </component>
@@ -120,36 +245,107 @@
       <screen x="1050" y="0" width="2560" height="1440" />
     </state>
     <state x="2032" y="536" width="586" height="392" key="#com.intellij.fileTypes.FileTypeChooser/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583454640728" />
-    <state x="2102" y="489" width="503" height="486" key="FileChooserDialogImpl" timestamp="1583451987247">
+    <state x="2012" y="468" width="626" height="528" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1583533208000">
       <screen x="1050" y="0" width="2560" height="1440" />
     </state>
-    <state x="2102" y="489" width="503" height="486" key="FileChooserDialogImpl/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583451987247" />
-    <state width="1884" height="413" key="GridCell.Tab.0.bottom" timestamp="1583447675747">
+    <state x="2012" y="468" width="626" height="528" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583533208000" />
+    <state x="2102" y="489" width="503" height="486" key="FileChooserDialogImpl" timestamp="1583550180585">
       <screen x="1050" y="0" width="2560" height="1440" />
     </state>
-    <state width="1884" height="413" key="GridCell.Tab.0.bottom/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583447675747" />
-    <state width="1884" height="413" key="GridCell.Tab.0.center" timestamp="1583447675747">
+    <state x="2102" y="489" width="503" height="486" key="FileChooserDialogImpl/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583550180585" />
+    <state width="1237" height="1309" key="GridCell.Tab.0.bottom" timestamp="1583817098355">
       <screen x="1050" y="0" width="2560" height="1440" />
     </state>
-    <state width="1884" height="413" key="GridCell.Tab.0.center/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583447675747" />
-    <state width="1884" height="413" key="GridCell.Tab.0.left" timestamp="1583447675747">
+    <state width="1237" height="1309" key="GridCell.Tab.0.bottom/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583817098355" />
+    <state width="1237" height="1309" key="GridCell.Tab.0.center" timestamp="1583817098354">
       <screen x="1050" y="0" width="2560" height="1440" />
     </state>
-    <state width="1884" height="413" key="GridCell.Tab.0.left/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583447675747" />
-    <state width="1884" height="413" key="GridCell.Tab.0.right" timestamp="1583447675747">
+    <state width="1237" height="1309" key="GridCell.Tab.0.center/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583817098354" />
+    <state width="1237" height="1309" key="GridCell.Tab.0.left" timestamp="1583817098354">
       <screen x="1050" y="0" width="2560" height="1440" />
     </state>
-    <state width="1884" height="413" key="GridCell.Tab.0.right/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583447675747" />
-    <state x="1818" y="367" key="SettingsEditor" timestamp="1583452176426">
+    <state width="1237" height="1309" key="GridCell.Tab.0.left/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583817098354" />
+    <state width="1237" height="1309" key="GridCell.Tab.0.right" timestamp="1583817098355">
       <screen x="1050" y="0" width="2560" height="1440" />
     </state>
-    <state x="1818" y="367" key="SettingsEditor/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583452176426" />
-    <state x="1993" y="347" width="672" height="678" key="search.everywhere.popup" timestamp="1583454456677">
+    <state width="1237" height="1309" key="GridCell.Tab.0.right/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583817098355" />
+    <state width="1237" height="1309" key="GridCell.Tab.1.bottom" timestamp="1583817089297">
       <screen x="1050" y="0" width="2560" height="1440" />
     </state>
-    <state x="1993" y="347" width="672" height="678" key="search.everywhere.popup/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583454456677" />
+    <state width="1237" height="1309" key="GridCell.Tab.1.bottom/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583817089297" />
+    <state width="1237" height="1309" key="GridCell.Tab.1.center" timestamp="1583817089297">
+      <screen x="1050" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1237" height="1309" key="GridCell.Tab.1.center/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583817089297" />
+    <state width="1237" height="1309" key="GridCell.Tab.1.left" timestamp="1583817089297">
+      <screen x="1050" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1237" height="1309" key="GridCell.Tab.1.left/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583817089297" />
+    <state width="1237" height="1309" key="GridCell.Tab.1.right" timestamp="1583817089297">
+      <screen x="1050" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1237" height="1309" key="GridCell.Tab.1.right/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583817089297" />
+    <state x="1818" y="367" key="SettingsEditor" timestamp="1583549691582">
+      <screen x="1050" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1563" y="165" key="SettingsEditor.inPresentationMode" timestamp="1583962145909">
+      <screen x="1050" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1563" y="165" key="SettingsEditor.inPresentationMode/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583962145909" />
+    <state x="1818" y="367" key="SettingsEditor/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583549691582" />
+    <state x="1984" y="559" key="com.intellij.ide.util.TipDialog" timestamp="1583980918681">
+      <screen x="1050" y="0" width="2560" height="1440" />
+    </state>
+    <state x="359" y="669" key="com.intellij.ide.util.TipDialog/1050.0.2560.1440/0.27.1050.1653@0.27.1050.1653" timestamp="1583709354564" />
+    <state x="1984" y="559" key="com.intellij.ide.util.TipDialog/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583980918681" />
+    <state x="2051" y="384" width="548" height="697" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583552676944">
+      <screen x="1050" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2051" y="384" width="548" height="697" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583552676944" />
+    <state x="1150" y="125" width="2360" height="1215" key="dock-window-1" timestamp="1583795347030">
+      <screen x="1050" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1150" y="125" width="2360" height="1215" key="dock-window-1/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583795347030" />
+    <state x="852" y="382" width="2360" height="1215" key="dock-window-2" timestamp="1583719304334">
+      <screen x="1050" y="0" width="2560" height="1440" />
+    </state>
+    <state x="852" y="382" width="2360" height="1215" key="dock-window-2/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583719304334" />
+    <state x="1993" y="347" width="672" height="678" key="search.everywhere.popup" timestamp="1583993635329">
+      <screen x="1050" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1909" y="299" width="840" height="1032" key="search.everywhere.popup.inPresentationMode" timestamp="1583966888842">
+      <screen x="1050" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1909" y="299" width="840" height="1032" key="search.everywhere.popup.inPresentationMode/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583966888842" />
+    <state x="1993" y="347" width="672" height="678" key="search.everywhere.popup/1050.0.2560.1440/0.27.1050.1653@1050.0.2560.1440" timestamp="1583993635329" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../seagul/seagul/rl/algos/sac_needle.py</url>
+          <line>162</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../seagul/seagul/rl/algos/sac_needle_switch.py</url>
+          <line>219</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../seagul/seagul/rl/algos/sac_needle_switch.py</url>
+          <line>333</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/switched_rl$run_needle.coverage" NAME="run_needle Coverage Results" MODIFIED="1583548000961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../seagul/seagul/notebooks/switching" />
+    <SUITE FILE_PATH="coverage/switched_rl$sac_needle.coverage" NAME="sac_needle Coverage Results" MODIFIED="1583530425282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../seagul/seagul/rl/algos" />
     <SUITE FILE_PATH="coverage/switched_rl$stable.coverage" NAME="stable Coverage Results" MODIFIED="1583447552871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/switched_rl$needle_test.coverage" NAME="needle_test Coverage Results" MODIFIED="1583552891635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../seagul/seagul/notebooks/scratch" />
+    <SUITE FILE_PATH="coverage/switched_rl$sac_needle_switch.coverage" NAME="sac_needle_switch Coverage Results" MODIFIED="1583817046361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../seagul/seagul/rl/algos" />
+    <SUITE FILE_PATH="coverage/switched_rl$run_needle_switched.coverage" NAME="run_needle_switched Coverage Results" MODIFIED="1583817084465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../seagul/seagul/notebooks/switching" />
   </component>
 </project>
