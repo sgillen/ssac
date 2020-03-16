@@ -103,9 +103,9 @@ def do_rollout(init_point = None):
 
 
 # %%
-
-ws_list, model_list, rewards = load_trials("seagul/seagul/notebooks/switching/data_needle/50k_slow_longer")
-fig, ax = smooth_bounded_curve(rewards, time_steps=[i*50 for i in range(rewards.shape[0])])
+# This is us
+ws_list, model_list, rewards = load_trials("/data_needle/50k_slow_longer")
+fig, ax = smooth_bounded_curve(rewards)
 plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
 ax.ticklabel_format(axis='x',style='sci')
 ax.set_title('Reward Curve')
