@@ -23,8 +23,8 @@ l1 = 1; l2 = 1
 lc1 = .5; lc2 = .5
 I1 = .2; I2 = 1.0
 g = 9.8
-max_torque = 5
-lqr_max_torque = 5
+max_torque = 25
+lqr_max_torque = 25
 max_t = 10.0
 
 
@@ -41,20 +41,29 @@ def reward_fn_sin(s, a):
 def reward_fn_gauss(s, a):
     return multivariate_normal.pdf(s, mean=[np.pi / 2, 0, 0, 0], cov=[1, 1, 1, 1]), False
 
+def reward_fn(s, a):
+    reward = -.1*(np.sqrt((s[0] - np.pi/2)**2 + s[1]**2))
+    return reward, False
+
+def reward_fn_sq(s, a):
+    reward = -.1*((s[0] - np.pi/2)**2 + s[1]**2)
+    return reward, False
+
+
 
 policy = MLP(input_size, output_size * 2, num_layers, layer_size, activation)
 value_fn = MLP(input_size, 1, num_layers, layer_size, activation)
 q1_fn = MLP(input_size + output_size, 1, num_layers, layer_size, activation)
 q2_fn = MLP(input_size + output_size, 1, num_layers, layer_size, activation)
 model = SACModelSwitch(policy, value_fn, q1_fn, q2_fn, 25, balance_controller=control
-                       , hold_count=1, gate_fn=torch.load("warm/gate5_rk"))
+                       , hold_count=20, gate_fn=torch.load("gate_data/gate_big"))
 
 env_config = {
     "init_state": [-np.pi / 2, 0, 0, 0],
     "max_torque": max_torque,
     "init_state_weights": [np.pi, np.pi, 0, 0],
     "dt": .01,
-    "reward_fn": reward_fn_sin,
+    "reward_fn": reward_fn_sq,
     "max_t": max_t,
     "m2": m2,
     "m1": m1,
@@ -63,14 +72,14 @@ env_config = {
     "lc2": lc2,
     "i1": I1,
     "i2": I2,
-    "integrator" : rk4
+    #"integrator" : euler
 }
 
 proc_list = []
 for seed in np.random.randint(0, 2 ** 32, 8):
     alg_config = {
         "env_name": "su_acrobot-v0",
-        "total_steps": 2e6,
+        "total_steps": 1e6,
         "model": model,
         "seed": seed,
         "goal_state": np.array([np.pi / 2, 0, 0, 0]),
@@ -79,9 +88,9 @@ for seed in np.random.randint(0, 2 ** 32, 8):
         "alpha": .05,
         "needle_lookup_prob": .8,
         "exploration_steps": 50000,
-        "gate_update_freq": float('inf'),
-        "gate_x": torch.as_tensor(torch.load('warm/X5_rk')),
-        "gate_y": torch.as_tensor(torch.load('warm/Y5_rk')),
+        "gate_update_freq": 25000,
+        "gate_x": torch.as_tensor(torch.load('gate_data/X_big')),
+        "gate_y": torch.as_tensor(torch.load('gate_data/Y_big')),
         "env_config": env_config,
         "min_steps_per_update" : 500,
         "sgd_batch_size": 128,

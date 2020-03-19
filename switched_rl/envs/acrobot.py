@@ -100,9 +100,11 @@ class SGAcroEnv(core.Env):
     def step(self, a):
         a = np.clip(a, -self.max_torque, self.max_torque)
         self.t += self.dt * self.act_hold
+        full_state = []
 
         for _ in range(self.act_hold):
             self.state = self.integrator(self._dynamics, a, self.t, self.dt, self.state)
+            full_state.append(self.state)
 
         done = False
         reward, done = self.reward_fn(self.state, a)
@@ -115,7 +117,8 @@ class SGAcroEnv(core.Env):
             reward -= 5
             done = True
 
-        return self._get_obs(), reward, done, {}
+        full_state = np.array(full_state).reshape(-1, 4)
+        return self._get_obs(), reward, done, {"full_state": full_state}
 
     def _get_obs(self):
         obs = self.state.copy()
@@ -123,7 +126,7 @@ class SGAcroEnv(core.Env):
         obs[1] = wrap(obs[1], self.th2_range[0], self.th2_range[1])
         return obs
 
-    # Shamelessly pulled from openAI's Acrobot-v1 env
+    # render is shamelessly pulled from openAI's Acrobot-v1 env
     def render(self, mode='human'):
         from gym.envs.classic_control import rendering
 
@@ -159,7 +162,6 @@ class SGAcroEnv(core.Env):
 
         return self.viewer.render(return_rgb_array = mode=='rgb_array')
 
-
     def close(self):
         if self.viewer:
             self.viewer.close()
@@ -192,39 +194,3 @@ class SGAcroEnv(core.Env):
         d2th = np.linalg.solve(M,(TAU - H - PHI))
         return np.array([th1d, th2d, d2th[0].item(), d2th[1].item()])
 
-    # def _dynamics(self, t, s0, act):
-    #     m1 = self.m1
-    #     m2 = self.m2
-    #     l1 = self.l1
-    #     lc1 = self.lc1
-    #     lc2 = self.lc2
-    #     I1 = self.i1
-    #     I2 = self.i2
-    #     g = 9.8
-    #     s = s0
-    #     a = act.item()
-    #     theta1 = s[0]+pi/2
-    #     theta2 = s[1]
-    #     dtheta1 = s[2]
-    #     dtheta2 = s[3]
-    #     d1 = m1 * lc1 ** 2 + m2 * (l1 ** 2 + lc2 ** 2 + 2 * l1 * lc2 * np.cos(theta2)) + I1 + I2
-    #     d2 = m2 * (lc2 ** 2 + l1 * lc2 * np.cos(theta2)) + I2
-    #     phi2 = m2 * lc2 * g * np.cos(theta1 + theta2 - np.pi / 2.0)
-    #     phi1 = (
-    #             -m2 * l1 * lc2 * dtheta2 ** 2 * np.sin(theta2)
-    #             - 2 * m2 * l1 * lc2 * dtheta2 * dtheta1 * np.sin(theta2)
-    #             + (m1 * lc1 + m2 * l1) * g * np.cos(theta1 - np.pi / 2)
-    #             + phi2
-    #     )
-    #     # the following line is consistent with the description in the
-    #     # paper
-    #     #ddtheta2 = (a + d2 / d1 * phi1 - phi2) / (m2 * lc2 ** 2 + I2 - d2 ** 2 / d1)
-    #     # else:
-    #     #     # the following line is consistent with the java implementation and the
-    #     #     # book
-    #     ddtheta2 = (a + d2 / d1 * phi1 - m2 * l1 * lc2 * dtheta1 ** 2 * np.sin(theta2) - phi2) / (
-    #         m2 * lc2 ** 2 + I2 - d2 ** 2 / d1
-    #     )
-    #     ddtheta1 = -(d2 * ddtheta2 + phi1) / d1
-    
-    #     return np.array([dtheta1, dtheta2, ddtheta1, ddtheta2])

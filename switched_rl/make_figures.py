@@ -1,5 +1,5 @@
 import gym
-import seagul.envs
+import switched_rl.envs
 
 from seagul.rl.run_utils import load_workspace
 from seagul.plot import smooth_bounded_curve
@@ -8,16 +8,15 @@ import matplotlib.pyplot as plt
 
 import numpy as np
 from numpy import pi
-# from simple_pid import PID
+from stable_baselines.results_plotter import load_results, ts2xy
+
 
 import torch.utils.data
 from torch.multiprocessing import Pool
 from itertools import product
 import os
 
-#jup_dir = "/home/sgillen/work/ssac/switched_rl"
 jup_dir = os.getcwd()
-fig_dir = '../tex'
 
 def load_trials(trial_dir):
     directory = jup_dir + trial_dir
@@ -65,6 +64,7 @@ def do_rollout_switched(init_point = None):
 
     #obs = env.reset()
     model.thresh = model.thresh_on
+    full_obs = []
 
     while not done:
         obs1_list.append(obs)
@@ -75,6 +75,7 @@ def do_rollout_switched(init_point = None):
             for _ in range(model.hold_count):
                 acts = model.balance_controller(obs).reshape(-1, model.num_acts)
                 obs, rew, done, _ = env.step(acts.numpy())
+                full_obs.append(obs)
                 obs = torch.as_tensor(obs, dtype=dtype)
         else:
             model.thresh = model.thresh_on
@@ -83,7 +84,9 @@ def do_rollout_switched(init_point = None):
             acts = acts.reshape(-1, model.num_acts).detach()
             for _ in range(model.hold_count):
                 obs, rew, done, _ = env.step(acts.numpy().reshape(-1))
+                full_obs.append(obs)
                 obs = torch.as_tensor(obs, dtype=dtype)
+
 
         acts_list.append(torch.as_tensor(acts.clone()))
         rews_list.append(torch.as_tensor(rew, dtype=dtype))
@@ -95,12 +98,10 @@ def do_rollout_switched(init_point = None):
     ep_obs1 = torch.stack(obs1_list)
     ep_acts = torch.stack(acts_list).reshape(-1, act_size)
     ep_rews = torch.stack(rews_list).reshape(-1, 1)
-    ep_obs2 = torch.stack(obs2_list)
+    ep_fobs = torch.tensor(full_obs).reshape(-1,4)
     ep_path = torch.tensor(path_list).reshape(-1,1)
 
-    return ep_obs1, ep_acts, ep_rews,  ep_path
-
-
+    return ep_obs1, ep_acts, ep_rews,  ep_path, ep_fobs
 
 
 def do_rollout(init_point = None):
@@ -124,8 +125,6 @@ def do_rollout(init_point = None):
     cur_step = 0
 
     while not done:
-
-
         acts, val,_,logp = model.step(obs.reshape(-1,obs_size))
         acts = acts.reshape(-1, model.num_acts).detach()
         #for _ in range(model.hold_count):
@@ -145,43 +144,94 @@ def do_rollout(init_point = None):
     return ep_obs1, ep_acts, ep_rews,  []
 
 # %%
-# This is us
-ws_list, model_list, rewards = load_trials("/data_needle/50k_slow_longer")
+jup_dir = "/home/sgillen/work/"
+trial_dir = "seagul/seagul/notebooks/switching/data_needle/50k_slow_longer"
+directory = jup_dir + trial_dir
+
+ws_list = []
+model_list = []
+min_length = float('inf')
+for entry in os.scandir(directory):
+    model, env, args, ws = load_workspace(entry.path)
+
+    if len(ws["raw_rew_hist"]) < min_length:
+        min_length = len(ws["raw_rew_hist"])
+
+    ws_list.append(ws)
+    model_list.append(model)
+
+min_length = int(min_length)
+rewards = np.zeros((min_length, len(ws_list)))
+for i, ws in enumerate(ws_list):
+    rewards[:, i] = np.array(ws["raw_rew_hist"][:min_length])
+
+print("seagul", rewards[-1, :].mean(), rewards[-1, :].std())
 fig, ax = smooth_bounded_curve(rewards)
-plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
-ax.ticklabel_format(axis='x',style='sci')
-ax.set_title('Reward Curve')
+ssac_size = rewards.shape[0]
 
-#ws_list, model_list, rewards = load_trials("/data_needle/vsac_long")
-smooth_bounded_curve(rewards, ax=ax, color='red')
-ax.legend(['ssac', 'sac'],loc ='lower right')
+color_iter = iter(['b', 'g', 'y', 'm', 'c'])
+log_dir = '../rl-baselines-zoo/baseline_log2/'
+for algo in os.scandir(log_dir):
+    try:
+        df_list = []
+        min_length = float('inf')
 
-fig.savefig('reward_curve.pdf')
-fig.show()
+        for entry in os.scandir(algo.path):
+            df = load_results(entry.path)
+
+            if len(df['r']) < min_length:
+                min_length = len(df['r'])
+
+            df_list.append(df)
+
+        min_length = int(min_length)
+        rewards = np.zeros((min_length, len(df_list)))
+
+        for i, df in enumerate(df_list):
+            rewards[:, i] = np.array(df['r'][:min_length])
+
+        print(print(algo.path), rewards[-1, :].mean(), rewards[-1, :].std())
+        smooth_bounded_curve(rewards[:ssac_size], ax=ax, color=color_iter.__next__())
+
+    except:
+        print(algo.path, "did not work")
+
+#ax.set_ylim(0, 100)
+ax.legend(['ssac (ours)', 'sac', 'ppo2', 'trpo', 'a2c', 'td3'])
+ax.grid()
+fig.savefig('reward.pdf')
+plt.show()
+
 #%%
 ws = ws_list[-1] # Just grab the last trial
 model = model_list[-1]
 
-obs_hist, act_hist, rew_hist, lqr_on = do_rollout()
-print(lqr_on)
+obs_hist, act_hist, rew_hist, lqr_on, full_obs = do_rollout_switched()
+#print(lqr_on)
 
-t = np.array([i*.2 for i in range(act_hist.shape[0])])
+t = np.array([i*2 for i in range(act_hist.shape[0])])
 plt.step(t, act_hist, 'k')
 plt.title('Actions')
 plt.xlabel('Time (seconds)')
 plt.ylabel('Torque (Nm)')
-plt.savefig(fig_dir = 'act_hist.pdf')
+plt.grid()
+plt.savefig('../figs/act_hist.pdf')
 plt.show(); plt.figure()
 
 
-t = np.array([i*.01 for i in range(obs_hist.shape[0])])
-plt.plot(t, obs_hist[:,0],'k')
-plt.plot(t, obs_hist[:,1],'r')
-plt.title('Actions')
+t = np.array([i*.01 for i in range(full_obs.shape[0])])
+plt.plot(t, full_obs[:,0],'k')
+plt.plot(t, full_obs[:,1],'r')
+
+plt.axhline(np.pi/2, -1, 11,color='k',  linestyle='dashed', alpha=.5)
+plt.axhline(0, -1, 11, color='k', linestyle='dashed', alpha=.5)
+
+plt.title('States')
 plt.xlabel('Time (seconds)')
 plt.ylabel('Angle (rad)')
 plt.legend(['th1', 'th2'])
-plt.savefig('obs_hist.pdf')
+plt.grid()
+plt.savefig('../figs/obs_hist.pdf')
 plt.show()
 
 

@@ -1,7 +1,7 @@
 from gym.envs.registration import register
+import numpy as np
 import seagul.envs
 
-import numpy as np
 def reward_fn_sin(s, a):
     reward = (np.sin(s[0]) + np.sin(s[0] + s[1]))
     return reward, False
@@ -22,5 +22,4 @@ env_config = {'init_state': [-1.5707963267948966, 0, 0, 0],
               'act_hold':20,
 }
 
-
-register(id="su_acrobot_cdc-v0", entry_point="seagul.envs.classic_control:SGAcroEnv", kwargs=env_config)
+register(id="su_acrobot_cdc-v0", entry_point="switched_rl/envs:SGAcroEnv", kwargs=env_config)

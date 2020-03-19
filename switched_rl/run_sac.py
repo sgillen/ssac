@@ -34,6 +34,12 @@ g = 9.8
 max_torque = 25
 max_t = 10
 
+
+def reward_fn_sq(s, a):
+    reward = -.1*((s[0] - np.pi/2)**2 + s[1]**2)
+    return reward, False
+
+
 for seed in np.random.randint(0, 2 ** 32, 8):
 
     policy = MLP(input_size, output_size*2, num_layers, layer_size, activation)
@@ -50,28 +56,12 @@ for seed in np.random.randint(0, 2 ** 32, 8):
         act_limit = max_torque,
     )
 
-    def control(q):
-        k = np.array([[-1649.86567367, -460.15780461, -716.07110032, -278.15312267]])
-        gs = np.array([pi / 2, 0, 0, 0])
-        return -k.dot(q - gs)
-
-    def reward_fn_sin(s,a):
-        reward = (np.sin(s[0]) + np.sin(s[0] + s[1]))
-        return reward, False
-
-    
-    # def reward_fn(s, a):
-    #     reward = -.1*(np.sqrt((s[0] - pi/2)**2 + s[1]**2))
-    #     #reward = (np.sin(s[0]) + np.sin(s[0] + s[1]))
-    #     return reward, False
-
-    
     env_config = {
         "init_state": [-pi/2, 0, 0, 0],
         "max_torque": max_torque,
         "init_state_weights": [np.pi, np.pi, 0, 0],
         "dt": .01,
-        "reward_fn" : reward_fn_sin,
+        "reward_fn" : reward_fn_sq,
         "max_t" : max_t,
         "m2": m2,
         "m1": m1,
@@ -81,14 +71,13 @@ for seed in np.random.randint(0, 2 ** 32, 8):
         "i1": I1,
         "i2": I2,
         "act_hold" : 20,
-#        "integrator": rk4,
     }
 
     alg_config = {
         "env_name": env_name,
         "model": model,
         "seed": seed,  # int((time.time() % 1)*1e8),
-        "total_steps" : 2e6,
+        "total_steps" : 1e6,
         "alpha" : .05,
         "exploration_steps" : 50000,
         "min_steps_per_update" : 500,
@@ -96,7 +85,7 @@ for seed in np.random.randint(0, 2 ** 32, 8):
         "min_steps_per_update" : 500,
         "sgd_batch_size": 128,
         "replay_batch_size" : 4096,
-        "iters_per_update": 4,
+        "iters_per_update": 16,
         #"iters_per_update": float('inf'),
         "env_config": env_config
     }
