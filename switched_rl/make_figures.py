@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 import numpy as np
 from numpy import pi
-from stable_baselines.results_plotter import load_results, ts2xy
+#from stable_baselines.results_plotter import load_results, ts2xy
 
 
 import torch.utils.data
@@ -145,7 +145,7 @@ def do_rollout(init_point = None):
 
 # %%
 jup_dir = "/home/sgillen/work/"
-trial_dir = "seagul/seagul/notebooks/switching/data_needle/50k_slow_longer"
+trial_dir = "ssac/switched_rl/data_needle/50k_slow_longer"
 directory = jup_dir + trial_dir
 
 ws_list = []

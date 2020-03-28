@@ -1,14 +1,12 @@
 from multiprocessing import Process
 from seagul.rl.run_utils import run_sg
 import seagul.envs
-from seagul.rl.algos.sacn_adaptive import sac_switched
+from seagul.rl.sac import sac_switched, SACModelSwitch
 import torch
 import torch.nn as nn
 from seagul.nn import MLP
-from seagul.rl.models import SACModelSwitch
 import numpy as np
 from scipy.stats import multivariate_normal
-from seagul.integration import rk4
 
 trial_name = input('Trial name please:\n')
 
@@ -49,8 +47,6 @@ def reward_fn_sq(s, a):
     reward = -.1*((s[0] - np.pi/2)**2 + s[1]**2)
     return reward, False
 
-
-
 policy = MLP(input_size, output_size * 2, num_layers, layer_size, activation)
 value_fn = MLP(input_size, 1, num_layers, layer_size, activation)
 q1_fn = MLP(input_size + output_size, 1, num_layers, layer_size, activation)
@@ -82,7 +78,7 @@ for seed in np.random.randint(0, 2 ** 32, 8):
         "total_steps": 1e6,
         "model": model,
         "seed": seed,
-        "goal_state": np.array([np.pi / 2, 0, 0, 0]),
+        "goal_state": torch.tensor([np.pi / 2, 0, 0, 0]),
         "goal_lookback": 10,
         "goal_thresh": .25,
         "alpha": .05,
@@ -101,7 +97,7 @@ for seed in np.random.randint(0, 2 ** 32, 8):
         "replay_buf_size" : int(500000),
     }
 
-    # sac_switched(**alg_config)
+    sac_switched(**alg_config)
 
     p = Process(
         target=run_sg,
