@@ -1,0 +1,11 @@
+!!python/object/apply:collections.OrderedDict
+- - - memory_limit
+    - 50000
+  - - n_timesteps
+    - 200000.0
+  - - noise_std
+    - 0.1
+  - - noise_type
+    - ornstein-uhlenbeck
+  - - policy
+    - MlpPolicy
