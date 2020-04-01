@@ -211,7 +211,7 @@ ax.ticklabel_format(axis='x', style='sci', scilimits=(0,0))
 fig.savefig(script_path + '../figs/reward.png')
 plt.show()
 
-obs_hist, act_hist, rew_hist, lqr_on, full_obs = do_rollout_switched()
+obs_hist, act_hist, rew_hist, lqr_on, full_obs = do_rollout_switched(init_point=np.array([-pi/2, 0, 0, 0]))
 
 t = np.array([i*2 for i in range(act_hist.shape[0])])
 plt.step(t, act_hist, 'k')
@@ -328,7 +328,6 @@ with Pool() as pool:
 # %%
 
 net = model.gate_fn
-#net = torch.load('/home/sgillen/work/seagul/seagul/notebooks/switching/warm/gate_big')
 
 n_thdot = 1
 n_th = 1000
