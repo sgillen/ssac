@@ -1,6 +1,6 @@
 ## Switched Soft Actor Critic
 
-This repository contains code to accompany the paper Switched Soft Actor Critic For the Acrobot Swingup and Balance Task
+This repository contains code to accompany the paper "Switched Soft Actor Critic For the Acrobot Swingup and Balance Task"
 
 This is a python package, to use it please install it into your python environment (highly recommend some sort of virtual environment) with
 
